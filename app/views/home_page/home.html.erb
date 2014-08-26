@@ -1,0 +1,17 @@
+<div class="span12">
+	<div class="center hero-unit">
+		<h2>Welcome to the blog site. This is a simple site created as an attempt to learn 'Ruby on Rails'</h2>
+		<em>The following button is suppose to show signup form once it is clicked</em><br>
+		<button id="signup" class="btn btn-large btn-primary" type="button">Signup</button>
+		<div id="signup_form">
+		</div>
+		<script type="text/javascript">
+			var signup = document.getElementById("signup");
+			var signup_form = document.getElementById("signup_form");
+
+			signup.addEventListener("click", function(){
+				signup_form.innerHTML = "The javascript is doing its job.";
+			});
+		</script>
+	</div>
+</div>

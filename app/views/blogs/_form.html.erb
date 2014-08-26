@@ -1,0 +1,44 @@
+<%= form_for(@blog) do |f| %>
+  <% if @blog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
+
+      <ul>
+      <% @blog.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :title %>
+    <div class="controls">
+      <%= f.text_field :title, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :body, :class=>"control-group" %>
+    <div class="controls">
+      <%= f.text_area :body %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :published_date, :class=>"control-label" %>
+    <div class="controls">
+      <%= f.datetime_select :published_date %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :author, :class=>"control-label" %>
+    <div class="controls">
+      <%= f.text_field :author, :class=>"some-class", :value=>"Rabi" %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= select_tag(:city_id, options_for_select([['Lisbon', 1], ['Madrid', 2]])) %>    
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

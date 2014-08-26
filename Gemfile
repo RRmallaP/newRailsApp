@@ -1,6 +1,13 @@
 source 'https://rubygems.org'
 ruby '1.9.3'
 
+#use bootstrap for nice layout
+gem 'bootstrap-sass', '2.3.2.0'
+gem 'sprockets', '2.11.0'
+
+#simple form which works along with bootstrap
+gem 'simple_form'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
 

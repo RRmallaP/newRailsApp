@@ -2,13 +2,23 @@
 <html>
 <head>
   <title>NewRailsApp</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= render 'layouts/shim' %>
 </head>
 <body>
+	<div class="container-fluid">
+		<div class="page-header">
+    		<h1>Simple Rails App <small>kind of a blog site</small></h1>
+    	</div>    	
+    	<%= render 'layouts/navbar' %>
 
-<%= yield %>
-
+	
+		<div class="row-fluid">
+    		<%= yield %>
+    	</div>
+    </div>    
 </body>
 </html>

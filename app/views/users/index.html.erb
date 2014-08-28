@@ -5,10 +5,9 @@
     <caption>Table listing all the blogs</caption>
   <thead>
     <tr>
+      <th>S.N</th>
       <th>Username</th>
       <th>Email</th>
-      <th>Dob</th>
-      <th>Gender</th>
       <th colspan="3">Acitons</th>
     </tr>
   </thead>
@@ -16,10 +15,9 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
+        <td><%= user.id %>
         <td><%= user.username %></td>
         <td><%= user.email %></td>
-        <td><%= user.dob %></td>
-        <td><%= user.gender %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>

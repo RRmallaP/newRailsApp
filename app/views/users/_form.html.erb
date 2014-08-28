@@ -1,16 +1,14 @@
-<div class="span9">
+<div class="span4 centered_form">
   <%= simple_form_for(@user) do |f| %>
     <%= f.error_notification %>
 
     <div class="form-inputs">
-      <%= f.input :username %>
-      <%= f.input :email %>
-      <%= f.input :dob, as: :date, start_year: Date.today.year - 80, end_year: Date.today.year - 8, order: [:day, :month, :year]  %>
-      <%= f.input :gender, as: :radio_buttons, :collection => ['Male', 'Female']%>
+      <%= render 'shared/error_message' %>
+      <%= f.input :username, :placeholder => 'ex- john doe', :validate => true %>
+      <%= f.input :email, :placeholder => 'ex- john.doe@johndoe.com', :validate => true %>
+      <%= f.input :password, as: :password, :validate => true %>
+      <%= f.input :password_confirmation, as: :password, :validate => true %>
     </div>
-
-    <div class="form-actions">
-      <%= f.button :submit %>
-    </div>
+      <%= f.button :submit, :value => 'Create Account' %>
   <% end %>
 </div>

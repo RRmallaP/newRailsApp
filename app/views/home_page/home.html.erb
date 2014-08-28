@@ -1,17 +1,34 @@
+
 <div class="span12">
 	<div class="center hero-unit">
 		<h2>Welcome to the blog site. This is a simple site created as an attempt to learn 'Ruby on Rails'</h2>
 		<em>The following button is suppose to show signup form once it is clicked</em><br>
-		<button id="signup" class="btn btn-large btn-primary" type="button">Signup</button>
-		<div id="signup_form">
+		<button id="signup" class="btn btn-large btn-primary" data-click = "0" type="button">Signup</button>
+		
+		<div id="signup_form" class="row-fluid">
+		
 		</div>
+		
 		<script type="text/javascript">
 			var signup = document.getElementById("signup");
 			var signup_form = document.getElementById("signup_form");
+			var form = '<%= escape_javascript render :partial => 'users/form' %>';
+			var form_element;
 
 			signup.addEventListener("click", function(){
-				signup_form.innerHTML = "The javascript is doing its job.";
+				
+				if(signup.dataset.click === "0"){
+					signup_form.innerHTML = form;
+					signup.dataset.click = 1;				
+				}
+				else{
+					signup_form.innerHTML = "";
+					signup.dataset.click = 0;
+				}
+
+
 			});
 		</script>
 	</div>
 </div>
+

@@ -1,6 +1,7 @@
 class HomePageController < ApplicationController
-	def home
 
+	def home
+		@user = User.new
 	end
 
 end
